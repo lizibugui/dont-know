@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85' fill='%23d4a943'%3E%26%23x25C6%3B%3C/text%3E%3C/svg%3E">
+  <title>决斗之城 —— 游戏王卡牌爱好者站</title>
+  <link rel="stylesheet" href="web/style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-logo">决斗之城</div>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="web/intro.html">游戏王介绍</a></li>
+        <li><a href="web/rules.html">玩法规则</a></li>
+        <li><a href="web/deck.html">热门卡组</a></li>
+        <li><a href="web/cards.html">卡牌图鉴</a></li>
+        <li><a href="web/gallery.html">收藏相册</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主视觉横幅 -->
+  <header style="position:relative;overflow:hidden;background:linear-gradient(120deg,#0a0f1d 40%,#13203a);">
+    <div style="max-width:1100px;margin:0 auto;padding:70px 20px;display:flex;align-items:center;gap:30px;">
+      <div class="fade-up" style="flex:1;min-width:0;">
+        <h1 style="font-size:46px;letter-spacing:8px;color:#f0d68a;text-shadow:0 0 24px rgba(212,169,67,.5);">决斗之城</h1>
+        <p style="font-size:17px;color:#a8a8b4;margin:14px 0 6px;letter-spacing:3px;">我的游戏王卡牌世界</p>
+        <p style="font-size:14px;color:#7d8394;max-width:520px;text-align:justify;">
+          从青眼白龙的黑魔术时代，到如今百花齐放的竞技环境，这里记录着我与「游戏王」有关的规则整理、卡组研究与收藏时光。
+          相信卡牌带来的不只是胜负，还有策略思考的乐趣与朋友之间的羁绊。
+        </p>
+        <a href="web/intro.html" style="display:inline-block;margin-top:22px;padding:10px 30px;border-radius:26px;background:linear-gradient(135deg,#d4a943,#d97b29);color:#0d1321;font-weight:bold;box-shadow:0 0 20px rgba(212,169,67,.4);transition:all .25s;">开始探索 →</a>
+      </div>
+      <div class="fade-up delay-2" style="flex-shrink:0;display:flex;gap:16px;">
+        <img src="image/dark-magician.png" alt="黑魔术师" data-zoom
+             style="width:170px;height:238px;object-fit:cover;border-radius:10px;border:2px solid #d4a943;box-shadow:0 8px 28px rgba(0,0,0,.6),0 0 18px rgba(212,169,67,.3);transform:rotate(-3deg);transition:transform .3s;">
+        <img src="image/blue-eyes.png" alt="青眼白龙" data-zoom
+             style="width:170px;height:238px;object-fit:cover;border-radius:10px;border:2px solid #d4a943;box-shadow:0 8px 28px rgba(0,0,0,.6),0 0 18px rgba(212,169,67,.3);transform:rotate(3deg) translateY(18px);transition:transform .3s;">
+      </div>
+    </div>
+  </header>
+
+  <!-- 栏目导航卡片 -->
+  <main class="container">
+    <h2 class="page-title" style="font-size:26px;">站内栏目</h2>
+    <p class="page-subtitle">六大板块 · 全面了解游戏王</p>
+    <div class="card-grid">
+      <a class="nav-card fade-up" href="web/intro.html">
+        <div class="card-icon">📖</div>
+        <h3>游戏王介绍</h3>
+        <p>从高桥和希的漫画到全球卡牌游戏，了解游戏王二十余年的发展历程。</p>
+      </a>
+      <a class="nav-card fade-up delay-1" href="web/rules.html">
+        <div class="card-icon">📜</div>
+        <h3>玩法规则</h3>
+        <p>胜利条件、卡组构成、场地区域、连锁机制与回合流程，新手入门必读。</p>
+      </a>
+      <a class="nav-card fade-up delay-2" href="web/deck.html">
+        <div class="card-icon">🃏</div>
+        <h3>热门卡组</h3>
+        <p>K9对击斗魂、巳剑、珠泪哀歌族、闪刀姬——当前环境的四大竞技卡组解析。</p>
+      </a>
+      <a class="nav-card fade-up delay-3" href="web/cards.html">
+        <div class="card-icon">✨</div>
+        <h3>卡牌图鉴</h3>
+        <p>怪兽、魔法、陷阱三大类卡牌展示，认识一张卡的基本构造。</p>
+      </a>
+      <a class="nav-card fade-up delay-4" href="web/gallery.html">
+        <div class="card-icon">🖼️</div>
+        <h3>收藏相册</h3>
+        <p>我的实体卡收藏与决斗瞬间，记录与卡牌有关的美好时光。</p>
+      </a>
+    </div>
+
+    <a class="back-home" href="index.html" style="display:none;"></a>
+  </main>
+
+  <footer class="footer">
+    <p>决斗之城 · 游戏王卡牌爱好者站 —— 内容仅用于学习交流</p>
+    <p><a href="index.html">返回主页</a></p>
+  </footer>
+
+  <script src="web/script.js"></script>
+</body>
+</html>

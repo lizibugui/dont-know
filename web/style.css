@@ -1,0 +1,610 @@
+/* ============ 游戏王主题站 全站样式 ============ */
+/* 配色：暗夜深蓝底 + 决斗金 + 卡面橙 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0d1321;
+  --bg-panel: #151d2e;
+  --bg-card: #1c2740;
+  --gold: #d4a943;
+  --gold-light: #f0d68a;
+  --orange: #d97b29;
+  --text-main: #e8e6e0;
+  --text-sub: #a8a8b4;
+}
+
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: var(--bg-dark);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(212, 169, 67, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(217, 123, 41, 0.05) 0%, transparent 50%);
+  color: var(--text-main);
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+/* ---------- 顶部导航 ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 19, 33, 0.95);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 2px 20px rgba(212, 169, 67, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 64px;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo::before {
+  content: "◆";
+  font-size: 16px;
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--text-main);
+  font-size: 15px;
+  border-radius: 6px;
+  transition: all 0.25s;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+  background: rgba(212, 169, 67, 0.1);
+}
+
+.nav-links a.active {
+  color: var(--bg-dark);
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(212, 169, 67, 0.4);
+}
+
+/* ---------- 通用布局 ---------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 34px;
+  color: var(--gold);
+  letter-spacing: 6px;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.page-subtitle::before,
+.page-subtitle::after {
+  content: "── ";
+  color: var(--orange);
+}
+
+.page-subtitle::after {
+  content: " ──";
+}
+
+.section-title {
+  font-size: 22px;
+  color: var(--gold-light);
+  margin: 36px 0 16px;
+  padding-left: 14px;
+  border-left: 4px solid var(--orange);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid rgba(212, 169, 67, 0.25);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(212, 169, 67, 0.12);
+}
+
+.panel p {
+  color: var(--text-main);
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.panel p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: var(--gold-light);
+  font-weight: bold;
+}
+
+/* ---------- 卡片式导航（主页） ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.nav-card {
+  position: relative;
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 169, 67, 0.3);
+  border-radius: 12px;
+  padding: 26px 22px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 169, 67, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 169, 67, 0.25);
+}
+
+.nav-card:hover::after {
+  opacity: 1;
+}
+
+.nav-card .card-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.nav-card h3 {
+  color: var(--gold);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.nav-card p {
+  color: var(--text-sub);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ---------- 左图右文（热门卡组） ---------- */
+.deck-row {
+  display: flex;
+  gap: 24px;
+  background: var(--bg-panel);
+  border: 1px solid rgba(212, 169, 67, 0.25);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+}
+
+.deck-row:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(212, 169, 67, 0.15);
+}
+
+.deck-row img {
+  width: 340px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 169, 67, 0.4);
+  flex-shrink: 0;
+}
+
+.deck-info h3 {
+  color: var(--gold);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.deck-info .deck-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: 20px;
+  padding: 1px 12px;
+  margin-bottom: 10px;
+}
+
+.deck-info p {
+  color: var(--text-main);
+  font-size: 14.5px;
+  text-align: justify;
+}
+
+/* ---------- 表格（规则页） ---------- */
+.rule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+.rule-table th,
+.rule-table td {
+  border: 1px solid rgba(212, 169, 67, 0.3);
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 14.5px;
+}
+
+.rule-table th {
+  background: rgba(212, 169, 67, 0.15);
+  color: var(--gold-light);
+}
+
+.rule-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ---------- 步骤条（回合流程） ---------- */
+.step-list {
+  list-style: none;
+  counter-reset: step;
+}
+
+.step-list li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 18px 52px;
+}
+
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: var(--bg-dark);
+  font-weight: bold;
+}
+
+.step-list li::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 36px;
+  bottom: 2px;
+  width: 2px;
+  background: rgba(212, 169, 67, 0.3);
+}
+
+.step-list li:last-child::after {
+  display: none;
+}
+
+.step-list h4 {
+  color: var(--gold-light);
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.step-list p {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+/* ---------- 卡牌图鉴（CSS 绘制卡面） ---------- */
+.ygo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.ygo-card {
+  background: linear-gradient(160deg, #c8933f, #a8702a);
+  border-radius: 10px;
+  padding: 10px;
+  color: #2a1a08;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.ygo-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+}
+
+.ygo-card .ygo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e8d5a8;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-bottom: 8px;
+}
+
+.ygo-card .ygo-name {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.ygo-card .ygo-element {
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+.ygo-card .ygo-art {
+  height: 150px;
+  border-radius: 5px;
+  border: 2px solid #6b4a1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  margin-bottom: 8px;
+}
+
+.ygo-card .ygo-stars {
+  color: #d97b29;
+  letter-spacing: 2px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.ygo-card .ygo-type {
+  background: #e8d5a8;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 1px 6px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.ygo-card .ygo-desc {
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 58px;
+}
+
+.ygo-card .ygo-stats {
+  text-align: right;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ---------- 相册 ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid figure {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 169, 67, 0.3);
+  cursor: pointer;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-grid figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+/* ---------- 灯箱 ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 86vw;
+  max-height: 86vh;
+  border-radius: 8px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 40px rgba(212, 169, 67, 0.35);
+}
+
+/* ---------- 时间线 ---------- */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid rgba(212, 169, 67, 0.35);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-item::before {
+  content: "●";
+  position: absolute;
+  left: -39px;
+  color: var(--orange);
+  font-size: 14px;
+}
+
+.timeline-item .tl-date {
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.timeline-item h4 {
+  color: var(--gold-light);
+  margin: 2px 0 4px;
+}
+
+.timeline-item p {
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+/* ---------- 页脚 ---------- */
+.footer {
+  border-top: 1px solid rgba(212, 169, 67, 0.25);
+  text-align: center;
+  padding: 24px 20px;
+  color: var(--text-sub);
+  font-size: 13px;
+}
+
+.footer a {
+  color: var(--gold);
+}
+
+/* ---------- 返回主页 ---------- */
+.back-home {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 8px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 24px;
+  color: var(--gold);
+  font-size: 14px;
+  transition: all 0.25s;
+}
+
+.back-home:hover {
+  background: var(--gold);
+  color: var(--bg-dark);
+  box-shadow: 0 0 16px rgba(212, 169, 67, 0.4);
+}
+
+/* ---------- 入场动画 ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 760px) {
+  .navbar-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .deck-row {
+    flex-direction: column;
+  }
+
+  .deck-row img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+}

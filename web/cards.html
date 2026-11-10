@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85' fill='%23d4a943'%3E%26%23x25C6%3B%3C/text%3E%3C/svg%3E">
+  <title>卡牌图鉴 - 决斗之城</title>
+  <link rel="stylesheet" href="../web/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="nav-logo" href="../index.html">决斗之城</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="intro.html">游戏王介绍</a></li>
+        <li><a href="rules.html">玩法规则</a></li>
+        <li><a href="deck.html">热门卡组</a></li>
+        <li><a href="cards.html">卡牌图鉴</a></li>
+        <li><a href="gallery.html">收藏相册</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title fade-up">卡牌图鉴</h1>
+    <p class="page-subtitle fade-up">认识一张卡的构造 · 三大卡牌种类</p>
+
+    <!-- 卡面构造 -->
+    <section class="panel fade-up" style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+      <img src="../image/blue-eyes.png" alt="卡面构造示例" data-zoom
+           style="width:240px;border-radius:8px;border:1px solid rgba(212,169,67,.4);flex-shrink:0;">
+      <div style="flex:1;min-width:260px;">
+        <h2 class="section-title" style="margin-top:0;">一张怪兽卡的构造</h2>
+        <p>
+          以经典的<span class="highlight">青眼白龙</span>为例，一张怪兽卡通常包含以下要素：
+        </p>
+        <p>
+          <span class="highlight">① 卡名</span>：卡片的名字，同名卡在整套卡组中最多 3 张；<br>
+          <span class="highlight">② 属性</span>：如光、暗、炎、水、地、风等，部分效果会参照属性；<br>
+          <span class="highlight">③ 星级（等级）</span>：1—12 星，决定通常召唤时需要的解放（祭品）数量，5~6 星需 1 只，7 星以上需 2 只；<br>
+          <span class="highlight">④ 卡图</span>：怪兽的形象；<br>
+          <span class="highlight">⑤ 种族与类型</span>：如龙族/通常，决定是否受种族相关效果影响；<br>
+          <span class="highlight">⑥ 效果或 flavor 文本</span>：效果怪兽写明效果，通常怪兽只有背景描述；<br>
+          <span class="highlight">⑦ 攻击力 / 守备力</span>：战斗数值，ATK 用于攻击，DEF 用于守备。
+        </p>
+      </div>
+    </section>
+
+    <!-- 三大类示例卡 -->
+    <section class="fade-up delay-1">
+      <h2 class="section-title">三大卡牌种类示例</h2>
+      <p style="color:#a8a8b4;font-size:14px;margin-bottom:18px;">
+        下面是用代码绘制的示例卡（原创卡名，仅作种类演示），鼠标悬停可以抬起卡片：
+      </p>
+      <div class="ygo-card-grid">
+        <!-- 怪兽卡 -->
+        <div class="ygo-card">
+          <div class="ygo-head">
+            <span class="ygo-name">苍涛的守誓龙</span>
+            <span class="ygo-element" style="background:#2e7bd6;">光</span>
+          </div>
+          <div class="ygo-art" style="background:linear-gradient(140deg,#123a63,#2e7bd6);">🐉</div>
+          <div class="ygo-stars">★★★★★★★★</div>
+          <span class="ygo-type">【龙族/效果】</span>
+          <p class="ygo-desc">这张卡召唤成功时才能发动。从卡组把 1 只「守誓」怪兽加入手卡。</p>
+          <div class="ygo-stats">ATK/2600&nbsp;&nbsp;DEF/2100</div>
+        </div>
+        <!-- 通常怪兽 -->
+        <div class="ygo-card">
+          <div class="ygo-head">
+            <span class="ygo-name">白银的传令翼龙</span>
+            <span class="ygo-element" style="background:#c9cdd6;">风</span>
+          </div>
+          <div class="ygo-art" style="background:linear-gradient(140deg,#4a5266,#8b93a8);">🦅</div>
+          <div class="ygo-stars">★★★★★</div>
+          <span class="ygo-type">【鸟兽族/通常】</span>
+          <p class="ygo-desc">翱翔于暴风雪上空的白色信使，把决斗的战书送往大地的尽头。</p>
+          <div class="ygo-stats">ATK/1900&nbsp;&nbsp;DEF/1200</div>
+        </div>
+        <!-- 魔法卡 -->
+        <div class="ygo-card" style="background:linear-gradient(160deg,#2e7d6e,#1f6e5c);">
+          <div class="ygo-head">
+            <span class="ygo-name">古代遗迹的觉醒</span>
+            <span class="ygo-element" style="background:#2e9e6e;">魔</span>
+          </div>
+          <div class="ygo-art" style="background:linear-gradient(140deg,#0f4c3a,#2e9e6e);">🏺</div>
+          <div class="ygo-stars" style="color:#d7f5e8;">通常魔法</div>
+          <span class="ygo-type" style="background:#d7f5e8;">装备/场地演示</span>
+          <p class="ygo-desc" style="color:#eafff6;">从卡组抽 2 张卡，然后选自己 1 张手卡回到卡组底。（示例文本）</p>
+        </div>
+        <!-- 陷阱卡 -->
+        <div class="ygo-card" style="background:linear-gradient(160deg,#a04a8c,#7d3472);">
+          <div class="ygo-head">
+            <span class="ygo-name">逆命的红线</span>
+            <span class="ygo-element" style="background:#c255a8;">陷</span>
+          </div>
+          <div class="ygo-art" style="background:linear-gradient(140deg,#5e1f56,#c255a8);">⚡</div>
+          <div class="ygo-stars" style="color:#f5dcf0;">反击陷阱</div>
+          <span class="ygo-type" style="background:#f5dcf0;">速度 3 演示</span>
+          <p class="ygo-desc" style="color:#fdeefb;">把 1 张手卡送去墓地才能发动。使那只怪兽的效果无效并破坏。（示例文本）</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel fade-up delay-2">
+      <h2 class="section-title" style="margin-top:0;">小结</h2>
+      <p>
+        <span class="highlight">怪兽卡</span>是战斗主力，包含通常、效果以及仪式 / 融合 / 同调 / 超量 / 灵摆 / 连接等召唤体系；
+        <span class="highlight">魔法卡</span>负责支援展开，可抽卡、检索、破坏、强化、复活怪兽；
+        <span class="highlight">陷阱卡</span>承担干扰防守，一般需要先盖放，常在对方回合发动。
+        三类卡片相互配合，才构成一副完整的卡组。
+      </p>
+    </section>
+
+    <a class="back-home" href="../index.html">← 返回主页</a>
+  </main>
+
+  <footer class="footer">
+    <p>决斗之城 · 游戏王卡牌爱好者站 —— 内容仅用于学习交流</p>
+  </footer>
+
+  <script src="../web/script.js"></script>
+</body>
+</html>
